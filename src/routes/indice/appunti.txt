@@ -1,0 +1,87 @@
+<!-- <div class="w-screen h-screen overflow-hidden {page.url.pathname == "/ciao" ? "overflow-scroll" : ""}"></div> -->
+<!-- static vuole che il figlio non si basi su di me  -->
+<!-- relativi vuole che il figlio non si basi su di me -->
+<!-- absolut deve avere un div parent -->
+<!-- foreach -->
+<!-- {#each Array(10) as element, index}
+            <Test number={index}/>
+    {/each} -->
+
+
+<!-- per traslare a destra  translate-x-0 sulla x invece -translate-x-0 a sinistra serve per absolut perchè se centri ti si centra angolo in alto a sinistra-->
+
+<!-- z-index serve per sceglere il layer quindi scegliere chi si vede prima -->
+<!-- per creare transition metti opaciti cont poit-event-non lo rende non tangibile -->
+<!-- flex-wrap serve per aggiustare posizionamento dei div -->
+<!-- w-fitt h-fitt in base al contenuto minimo che contiene il contenuto -->
+
+space mette il gap senza sforare
+splide gia caroselli fatti
+
+per testo responsiv usi es 2xl:text-size-xl
+
+per input usare text-center
+
+filtri es blur non cambia img
+
+transition per ogni transition bisogna metttere duration e nelle [] si mette es opaciti
+
+animatio animazioni (animejs)
+
+scale cambia grandezza senza cambiare gli altri parametri
+
+skew roba strana div
+
+cursor cambia tipo cursore
+
+text area puo avere piu righe 
+input no
+
+
+will-change ottimizza 
+
+svg insieme di punti e non perde qualiata 
+usare svelt-boostrap-icons 
+iconiFy per svelte
+
+darck mode
+per mettere una una castom 
+vai su App.css e aggiungi
+@custom-variant dark (&:where(.dark, .dark *));
+
+per swicciare aggiungi una classe darck all html principale
+
+epi è e un punto dietro al sito dove si mandano delle richieste e ti manda una risposta in dati 
+
+local
+
+session
+
+cookie per login usarli e jwt jeson codificato in stringa
+
+and to and chiave asincrone(privata e publiaca) per mandare quela sincrona()
+
+state dichiara che stara per cambiare
+derived che appena cambia state fa cambiare la variabile con derived
+effect appena cambia qualcosa nel componente fa cambiare il codice come hai deciso
+props variabili che si possono passaread un componente padre -> figlio
+bindable crea un collegamento constante con un variabile del figlio e del padre
+inspect dice quando la scritta si aggiornera
+host 
+
+
+sito per draggare interact.js
+
+per prendere elemento bisogna 
+
+
+let divPreso:HTMLDivElement
+
+div bind:this={divPreso}
+
+onMount funzione che esegue una funzione come parametro all avvio del componente
+
+html canvas sono tanti pixel e posso cambiare ogni pixel
+
+
+ssh
