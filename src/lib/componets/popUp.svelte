@@ -1,28 +1,28 @@
 <script lang="ts">
 	import InputPop from "./inputPop.svelte";
-    let inpData:string = $state("") //cambiera con state
+    let {tipo = "CREA",placeData = "data", placeTitolo ="titolo", placeContenuto = "contenuto", placeEntrata = "entrata" , placeUscita = "uscita", inpData=$bindable(), inpTitolo=$bindable(), inpEntrata=$bindable(), inpUscita=$bindable(), textAreaContenuto=$bindable(), } = $props()
 
-let {tipo = "CREA",placeData = "data", placeTitolo ="titolo", placeContenuto = "contenuto", placeEntrata = "entrata" , placeUscita = "uscita"} = $props()
-    try {
-        
-    } catch (error) {
-        
-    }
-    
-    
 
+    // let inpData:string = $state("") //cambiera con state
+    // let inpTitolo:string = $state("") //cambiera con state
+    // let inpEntrata:string = $state("") //cambiera con state
+    // let inpUscita:string = $state("") //cambiera con state
+    // let textAreaContenuto:string = $state("")
 
 </script>
 
-<div class="popUpCrea w-[50%] h-[30%] bg-red-900 ring-2 ring-white  ">
-    <h1>{tipo}</h1>
-    <InputPop placehol = {placeData} bind:inpData/>
-    <InputPop placehol = {placeTitolo}/>
-    <InputPop placehol = {placeContenuto}/>
-    <InputPop placehol = {placeEntrata}/>
-    <InputPop placehol = {placeUscita}/>
+<div class="popUpCrea w-[30%] h-[30%] bg-red-900 ring-2 ring-white  absolute top-[40%] left-[50%] -translate-x-[50%] flex flex-col items-center px-[2%] ">
+
+    <h1 class=" pt-[0.5%]">{tipo}</h1>
+    <div class="testo flex space-x-[15%] ">
+        <div class="titolo-data flex flex-col gap-y-2">
+        <InputPop placehol = {placeData} bind:textContenuto={inpData} tipo="D"/>
+        <InputPop placehol = {placeTitolo} bind:textContenuto={inpTitolo}/>
+        <InputPop placehol = {placeEntrata} bind:textContenuto={inpEntrata}/>
+        <InputPop placehol = {placeUscita} bind:textContenuto={inpUscita}/>
+    </div>
     
-</div>
-<div>
+    <textarea name="" class="rounded-2xl" placeholder="{placeContenuto} " bind:value={textAreaContenuto}></textarea>
+    </div>
     
 </div>

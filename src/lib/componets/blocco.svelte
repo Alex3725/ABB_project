@@ -35,6 +35,6 @@
     <div class="uscita">{uscita}</div>
     <div class="oreTot">{oreTot}</div>
 
-
     
 </div>
+

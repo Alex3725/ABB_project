@@ -1,5 +1,5 @@
 <script lang="ts">
-    let {placehol = "",inpData=$bindable(), tipo="D"} = $props()
+    let {placehol = "",textContenuto=$bindable(), tipo="T"} = $props()
     switch (tipo) {
         case "T":
             tipo = "text"
@@ -14,7 +14,6 @@
 </script>
 
 <div>
-    <input type="{tipo}" bind:value={inpData} name="data" class=" rou" placeholder="{placehol}"> <!--con bind continuera ad aggiornarsi-->
-    
+    <input type="{tipo}" bind:value={textContenuto} name="data" class=" rounded-2xl" placeholder="{placehol}"> <!--con bind continuera ad aggiornarsi-->
     
 </div>

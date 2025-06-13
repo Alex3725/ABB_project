@@ -61,13 +61,13 @@ cookie per login usarli e jwt jeson codificato in stringa
 
 and to and chiave asincrone(privata e publiaca) per mandare quela sincrona()
 
-state dichiara che stara per cambiare
-derived che appena cambia state fa cambiare la variabile con derived
-effect appena cambia qualcosa nel componente fa cambiare il codice come hai deciso
-props variabili che si possono passaread un componente padre -> figlio
-bindable crea un collegamento constante con un variabile del figlio e del padre
-inspect dice quando la scritta si aggiornera
-host 
+$state dichiara che stara per cambiare
+$derived che appena cambia state fa cambiare la variabile con derived
+$effect appena cambia qualcosa nel componente fa cambiare il codice come hai deciso
+$props variabili che si possono passaread un componente padre -> figlio
+$bindable crea un collegamento constante con un variabile del figlio e del padre
+$inspect dice quando la scritta si aggiornera
+%host 
 
 
 sito per draggare interact.js
@@ -84,4 +84,6 @@ onMount funzione che esegue una funzione come parametro all avvio del componente
 html canvas sono tanti pixel e posso cambiare ogni pixel
 
 
+
+per utilizzare su un altro pc si scarica la repo si va terminale e si fa "npm install" e poi "npm run dev"
 ssh
