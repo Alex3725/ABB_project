@@ -87,3 +87,11 @@ html canvas sono tanti pixel e posso cambiare ogni pixel
 
 per utilizzare su un altro pc si scarica la repo si va terminale e si fa "npm install" e poi "npm run dev"
 ssh
+
+
+foreach se dopo elemento metti , index ti mette indice
+proprieta () attributo a cui fa riferimento l oggetto da ricaricare
+
+se oggetto a piu attributi ...rest
+
+away serve per le API

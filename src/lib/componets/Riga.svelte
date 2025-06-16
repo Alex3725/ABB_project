@@ -1,7 +1,7 @@
 <script lang="ts">
 	import PopUp from "./popUp.svelte";
 
-    let { data, entrata, uscita, contenuto, titolo } = $props() 
+    let { data, entrata, uscita, contenuto, titolo, stato = $bindable() } = $props() 
 
     let oreTot = uscita - entrata;
 
@@ -24,17 +24,22 @@
    }else {
     tipo = ROSSO
    }
+   
+
 
 </script>
 
 <div class="riga w-[100%] h-[10%] {tipo} flex items-center justify-center gap-[5%] ">
+    <input type="checkbox" name="" id="" bind:checked={stato}>
+
     <div class="giorn">{data}</div>
     <div class="titolo">{titolo}</div>
     <div class="contenuto ">{contenuto}</div>
     <div class="entrata">{entrata}</div>
     <div class="uscita">{uscita}</div>
     <div class="oreTot">{oreTot}</div>
-
+    <div>{stato}</div>
+    
     
 </div>
 

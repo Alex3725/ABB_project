@@ -2,6 +2,7 @@
 <script lang="ts">
 	import Bottone1 from '$lib/componets/bottone1.svelte';
 	import Bottone from '$lib/componets/bottone1.svelte';
+	import PopUp from "$lib/componets/popUp.svelte";
 	import '../app.css';
 
 	let { children } = $props();
@@ -25,5 +26,6 @@
 	<div class="bg-red-300 w-full h-[90%]"><!--  guardare classi su tailwind.css -->
 		{@render children()} <!-- quella parte codice che rappresenta la pagina/pagine-->
 	</div>
+	<PopUp/>
 </div>
 <!-- src/routes/+layout.svelte -->
