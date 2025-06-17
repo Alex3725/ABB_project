@@ -1,9 +1,8 @@
 
 <script lang="ts">
-	import Bottone1 from '$lib/componets/bottone1.svelte';
-	import Bottone from '$lib/componets/bottone1.svelte';
+	import BottoneLayout from '$lib/componets/bottoneLayout.svelte';
 	import PopUp from "$lib/componets/popUp.svelte";
-	import '../app.css';
+	import '../../app.css';
 
 	let { children } = $props();
 
@@ -17,9 +16,9 @@
 		<a href="/"><img src="/icons8-home-logo-100.png" alt="home icon" class="w-10 h-10 object-cover"/></a>
 
 		<div class="testo w-[40%] h-[30%] flex items-center justify-center gap-[5%]">
-			<Bottone1 testo = {"ciao"} percorsoPag = {"/indice"}/>
-			<Bottone1 testo = {"ciao"} percorsoPag = {"/indice"}/>
-			<Bottone1 testo = {"ciao"} percorsoPag = {"/indice"}/>
+			<BottoneLayout testo = {"ciao"} percorsoPag = {"/indice"}/>
+			<BottoneLayout testo = {"ciao"} percorsoPag = {"/indice"}/>
+			<BottoneLayout testo = {"ciao"} percorsoPag = {"/indice"}/>
 		</div>
 		
 	</nav>

@@ -7,6 +7,9 @@
         case "D":
             tipo = "date"
             break;
+        case "N":
+            tipo = "number"
+            break;
         default:
             break;
     }

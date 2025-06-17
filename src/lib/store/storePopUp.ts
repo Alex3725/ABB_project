@@ -1,13 +1,14 @@
 import { writable } from "svelte/store";
 
 export const PopUp = writable({
+    showChe:false,
     show: false,
     saveData: false,
     data:"", 
     entrata:0, 
     uscita:0, 
     titolo:"", 
-    tesxAreaContent:"",
+    textAreaContent:"",
     placeHolder: true
 });
 
@@ -23,8 +24,8 @@ export function showPopUp() {
 }   
 
 
-export function saveData(upData?:string, upEntrata?:number, upUscita?:number, upTitolo?:string, upTextAreaContent?:string) {
-    PopUp.update((obj) => {
+export function saveData(upData?:string,upTitolo?:string ,upEntrata?:number, upUscita?:number, upTextAreaContent?:string) {
+    PopUp.update((obj:any) => {
         return {
             ...obj,
             saveData: true,
@@ -42,13 +43,14 @@ export function saveData(upData?:string, upEntrata?:number, upUscita?:number, up
 
 export function reSetData() {
     PopUp.set({
+        showChe:false,
         show: false,
         saveData: false,
         data:"", 
         entrata:0, 
         uscita:0, 
         titolo:"", 
-        tesxAreaContent:"",
+        textAreaContent:"",
         placeHolder: true
     })
 }
@@ -58,6 +60,24 @@ export function hiddenPopUp(){
         return{
             ...obj,
             show: false
+        }
+    })
+}
+
+export function showCheck() {
+    PopUp.update((obj)=>{
+        return{
+            ...obj,
+            showChe: true
+        }
+    })
+}
+
+export function hiddenCheck() {
+    PopUp.update((obj)=>{
+        return{
+            ...obj,
+            showChe: false
         }
     })
 }
