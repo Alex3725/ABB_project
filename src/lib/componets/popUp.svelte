@@ -2,6 +2,7 @@
 	import InputPop from "./inputPop.svelte";
     import { hiddenPopUp, PopUp as PopUpStore, reSetData, saveData } from "$lib/store/storePopUp";
 	import { Check } from "svelte-bootstrap-icons";
+	import BottoneDeafoultStyle from "./bottoneDeafoultStyle.svelte";
 let {tipo = "CREA",placeData = "data", placeTitolo ="titolo", placeContenuto = "contenuto", placeEntrata = "entrata" , placeUscita = "uscita"  } = $props()
 
     let inpData:string = $state("") //cambiera con state
@@ -9,6 +10,8 @@ let {tipo = "CREA",placeData = "data", placeTitolo ="titolo", placeContenuto = "
     let inpEntrata:number = $state(0) //cambiera con state
     let inpUscita:number = $state(0) //cambiera con state
     let textAreaContenuto:string = $state("")
+
+
     function savedAndClosed() {
         saveData(inpData,inpTitolo,inpEntrata, inpUscita, textAreaContenuto)
         hiddenPopUp()
@@ -42,6 +45,5 @@ let {tipo = "CREA",placeData = "data", placeTitolo ="titolo", placeContenuto = "
     
     <textarea name="" class="rounded-2xl" placeholder="{placeContenuto} " bind:value={textAreaContenuto}></textarea>
     </div>
-    <button type="button" onclick={savedAndClosed}><Check/></button>
-    <button type="button">a</button>
+    <BottoneDeafoultStyle text={""} funzione={savedAndClosed}><Check/></BottoneDeafoultStyle>
 </div>

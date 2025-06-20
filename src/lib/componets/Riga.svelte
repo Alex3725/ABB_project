@@ -1,17 +1,15 @@
 <script lang="ts">
-	import { Type } from "svelte-bootstrap-icons";
-	import PopUp from "./popUp.svelte";
-	import { showCheck } from "$lib/store/storePopUp";
+	import { Trash3Fill, Type } from "svelte-bootstrap-icons";
     import { hiddenPopUp, PopUp as PopUpStore, reSetData, saveData } from "$lib/store/storePopUp";
 
-    let { data, entrata, uscita, contenuto, titolo, stato = $bindable() } = $props() 
+let { data= $bindable(), entrata= $bindable(), uscita= $bindable(), contenuto= $bindable(), titolo= $bindable(), stato = $bindable(), elimina,oreTot=$bindable(0) } = $props() 
 
     console.log(typeof(uscita));
     console.log(typeof(entrata));
     
     
 
-    let oreTot = parseInt(uscita) - parseInt(entrata);
+    oreTot = parseInt(uscita) - parseInt(entrata);
 
 
     let tipo = "";
@@ -32,26 +30,33 @@
    }else {
     tipo = ROSSO
    }
+   let statoModifica = $state(true)
    
-   $effect(()=>{
-
-   })
+   
 
 </script>
 
-<div class="riga w-[100%] h-[10%] {tipo} flex items-center justify-center border-2">
-    <div class="ml-1 w-[2%]">
-        <input type="checkbox" name="" class="giorn {$PopUpStore.showChe ? "block": "hidden"}" bind:checked={stato}>
-    </div>
-    
+<tr class="riga w-full h-[25%] {tipo} flex items-center justify-center border-2 ">
+    <td class="ml-1 w-[2%]">
+        <input type="checkbox" name="" class="giorn {$PopUpStore.showChe ? "block": "hidden"} rounded-[2vw]" bind:checked={stato}>
+    </td>
+    <td class="w-[15.35%] p-[0.5%] flex items-center justify-center "><input type="date" name="" class="entrata  w-full h-full rounded-[2vw]" disabled={statoModifica} bind:value={data}></td>
+    <td class="w-[20%] p-[0.5%] flex items-center justify-center "><input type="text" name="" class="entrata  w-full h-full   rounded-[2vw]"disabled={statoModifica} bind:value={titolo}></td>
+    <td class="w-[25%] p-[0.5%] h-full  flex items-center justify-center"><textarea name="" class="entrata w-full h-full rounded-[2vw] " disabled={statoModifica} bind:value={contenuto}></textarea></td>
+    <td class="w-[10.35%] p-[0.5%] flex items-center justify-center"><input type="number" name="" class="entrata w-full h-full rounded-[2vw]" disabled={statoModifica} bind:value={entrata}></td>
+    <td class=" w-[10.35%] p-[0.5%] flex items-center justify-center"><input type="number" name="" class="entrata w-full h-full rounded-[2vw]" disabled={statoModifica} bind:value={uscita}></td>
+    <td class=" w-[10.35%] p-[0.5%] flex items-center justify-center"><div class="entrata w-full h-full rounded-[2vw]">{statoModifica}</div></td>
+    <td class="w-[2.87.3%] p-[0.5%]  flex items-center justify-center ">
+        <button onclick={()=>{statoModifica = false;}}><Trash3Fill/></button>
+    </td>
+    <td class="w-[2.87%] p-[0.5%]  flex items-center justify-center  {!statoModifica ? 'opacity-100 pointer-events-auto' : 'opacity-0  pointer-events-none'}">
+        <!-- <button onclick={}><Trash3Fill/></button>  fare salvataggio sul local storage -->
+    </td>
+    <td class="w-[2.87%] p-[0.5%]  flex items-center justify-center  ">
+        <button onclick={elimina}><Trash3Fill/></button>
+    </td>
+</tr>
 
-    <div class="giorn w-[13%]  text-center p-[0.5%] pl-[2%]">{data}</div>
-    <div class="titolo w-[23%]  text-center p-[0.5%] pl-[2%]">{titolo}</div>
-    <div class="contenuto w-[23%] p-[0.5%] pl-[2%] ">{contenuto}</div>
-    <div class="entrata w-[13%]  text-center p-[0.5%] pl-[2%]">{entrata}</div>
-    <div class="uscita w-[13%]  text-center p-[0.5%] pl-[2%]">{uscita}</div>
-    <div class="oreTot w-[13%]  text-center p-[0.5%] pl-[2%]">{oreTot}</div>
-    
-    
-</div>
+
+
 
