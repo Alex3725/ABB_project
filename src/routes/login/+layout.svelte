@@ -8,7 +8,9 @@
 	
 </script>
 
-
-<div class="bg-red-300 w-full h-[90%]"><!--  guardare classi su tailwind.css -->
+<div class="w-screen h-screen flex flex-col justify-center items-center bg-[url(/img/sfondoLogin.jpg)] bg-cover bg-center">
+	<h1 class=" text-2xl [50%] text-white ">ABB PCTO</h1>
+	<div class=" w-[60%] h-[50%] "><!--  guardare classi su tailwind.css -->
 		{@render children()} <!-- quella parte codice che rappresenta la pagina/pagine-->
+	</div>
 </div>
