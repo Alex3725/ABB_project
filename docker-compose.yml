@@ -1,14 +1,17 @@
+
 services:
-  db:
-    image: postgres
+  mysql:
+    container_name: sveltekit_mysql
     restart: always
-    ports:
-      - 5432:5432
     environment:
-      POSTGRES_USER: alex
-      POSTGRES_PASSWORD: alex123
-      POSTGRES_DB: drizzle-postgres
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user123
+    ports:
+      - "3306:3306"
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - mysql_data:/var/lib/mysql
+
 volumes:
-  pgdata:
+  mysql_data:

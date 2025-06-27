@@ -7,6 +7,12 @@ export const handle: Handle = async ({ event, resolve }) => {//passa richiesta
 
 	const response = await resolve(event);
 	return response;
+
+	
 };
+
+
+
+
 
 // per saiber sicuirity hash 256 in base ad un testo ti trasforma quello in una cosa non convertibile

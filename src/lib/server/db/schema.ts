@@ -1,34 +1,37 @@
-import { pgTable, serial, text, varchar,timestamp,boolean,date,time,integer,foreignKey } from 'drizzle-orm/pg-core';
+import { mysqlTable,int ,serial, text, varchar,timestamp,boolean,date,time, tinyint } from 'drizzle-orm/mysql-core';
 
 
-export const user = pgTable('user', {
-	user_id: serial("id").primaryKey(),
-	nome: varchar("nome", { length: 100 }),
-	email: varchar("email", { length: 255 }).unique(),
-	passwordHash: text("password_hash"),
-	tempoCreazione: timestamp("tempo_creazione").defaultNow(),
 
-
+export const users = mysqlTable('users', {
+  id: int('id').autoincrement().primaryKey(),
+  name: varchar('name', { length: 255 }).notNull(),
+  email: varchar('email', { length: 255 }).notNull(),
 });
 
-export const popupData = pgTable('popup_data', {
-	id: serial('id').primaryKey(),
 
-	showCheck: boolean('show_check').notNull(),
-	status: boolean('status').notNull().default(false),
+export const utenti = mysqlTable('utenti',{
+	user_id:int('user_id').autoincrement().primaryKey(),
+	name: varchar('name', { length: 100 }).notNull(),
+	email: varchar('email', { length: 100 }).notNull(),
+	passw: varchar('passw', { length: 255 }).notNull(),
+	autorizzato:tinyint('autorizzato').notNull().default(0),
 
-	data: date('data').notNull(),
-	entrata: time('entrata').notNull(),
-	uscita: time('uscita').notNull(),
-
-	titolo: text('titolo').notNull(),
-	textAreaContent: text('text_area_content'),
-
-	oreTotali: integer('ore_totali').notNull().default(0),
-
-	foreignId: integer('foreign_id').notNull(),
-
-	// ✅ Foreign key dichiarata in modo esplicito:
 });
+// src/lib/db/schema/giornate.ts
+
+
+
+export const attivita = mysqlTable('attivita', {
+  id: int('id').primaryKey().autoincrement(),
+  user_id: int('user_id')
+  .notNull()
+  .references(()=> utenti.user_id),
+  data: date('data').notNull(),
+  titolo: varchar('titolo', { length: 255 }).notNull(),
+  ora_entrata: time('ora_entrata').notNull(),
+  ora_uscita: time('ora_uscita').notNull(),
+  descrizione: text('descrizione'),
+});
+
 
 

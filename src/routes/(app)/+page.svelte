@@ -1,50 +1,14 @@
 <script lang="ts">
+	import BottoneDeafoultStyle from "$lib/componets/bottoneDeafoultStyle.svelte";
+	import BottoneLayout from "$lib/componets/bottoneLayout.svelte";
 
-      let message = '';
 
-  async function save() {
-    const res = await fetch('/api/register', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message }),
-    });
 
-    const text = await res.text();
-    alert(text);
-  }
-
-  import { onMount } from 'svelte';
-
-  // ✅ Tipo per ogni messaggio
-  type Message = {
-    id: number;
-    content: string;
-  };
-
-  let messages: Message[] = [];
-
-  onMount(async () => {
-    const res = await fetch('/api/guardaRegisterù');
-
-    if (res.ok) {
-      const data: Message[] = await res.json();
-      messages = data;
-    } else {
-      console.error('Errore nel caricamento messaggi');
-    }
-  });
 </script>
 
-<!-- prova database -->
-
-<input bind:value={message} placeholder="Scrivi un messaggio" />
-<button onclick={save}>Salva nel DB</button>
-
-
-
-<h2>Messaggi salvati</h2>
-<ul>
-  {#each messages as m}
-    <li>{m.content}</li>
-  {/each}
-</ul>
+<div class="w-full h-full text-white flex  justify-center items-center">
+    <div class=" w-[30%] h-full flex justify-center items-center gap-7 bg-blue-900 rounded-[2vw]">
+        <BottoneLayout w={30} h={20} percorsoPag={"./register/"} testo={"registrati"} classStyle={" bg-blue-950 hover:bg-blue-700 p-[0.5%]"}/>
+        <BottoneLayout w={30} h={20} percorsoPag={"./login/"} testo={"accedi"} classStyle={" bg-blue-950 hover:bg-blue-700 p-[0.5%]"}/>
+    </div>
+</div>
