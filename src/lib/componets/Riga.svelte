@@ -51,6 +51,7 @@ let { data= $bindable(), entrata= $bindable(), uscita= $bindable(), contenuto= $
     </td>
     <td class="w-[2.87%] p-[0.5%]  flex items-center justify-center  {!statoModifica ? 'opacity-100 pointer-events-auto' : 'opacity-0  pointer-events-none'}">
         <!-- <button onclick={}><Trash3Fill/></button>  fare salvataggio sul local storage -->
+         
     </td>
     <td class="w-[2.87%] p-[0.5%]  flex items-center justify-center  ">
         <button onclick={elimina}><Trash3Fill/></button>

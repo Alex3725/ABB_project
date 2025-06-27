@@ -2,11 +2,16 @@
 <script lang="ts">
 	import BottoneLayout from '$lib/componets/bottoneLayout.svelte';
 	import PopUp from "$lib/componets/popUp.svelte";
+	import { onMount } from 'svelte';
 	import '../../app.css';
 
 	let { children } = $props();
 
-
+	onMount(async()=>{
+		let result = await fetch("/api/lista")
+		let data = await result.json()
+		console.log(data)
+	})
 	
 </script>
 

@@ -6,10 +6,9 @@
 
 </script>
 
-<div class="w-full h-full text-white">
-    <ul class="flex justify-center items-center space-x-[30%]">
-        <li><a href="./home/login/" class=" bg-blue-950 hover:bg-blue-700 p-[20%]">accedi</a></li>
-        <li><a href="./home/register/">registarti</a></li>
-        <BottoneLayout percorsoPag={"./home/register/"} testo={"accedi"} classStyle={" bg-blue-950 hover:bg-blue-700 p-[0.5%]"}/>
-    </ul>
+<div class="w-full h-full text-white flex  justify-center items-center">
+    <div class=" w-[30%] h-full flex justify-center items-center gap-7 bg-blue-900 rounded-[2vw]">
+        <BottoneLayout w={30} h={20} percorsoPag={"./home/register/"} testo={"registrati"} classStyle={" bg-blue-950 hover:bg-blue-700 p-[0.5%]"}/>
+        <BottoneLayout w={30} h={20} percorsoPag={"./home/login/"} testo={"accedi"} classStyle={" bg-blue-950 hover:bg-blue-700 p-[0.5%]"}/>
+    </div>
 </div>
