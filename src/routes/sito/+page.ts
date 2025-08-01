@@ -1,4 +1,4 @@
-export async function load({ fetch }) {
+export async function load({ fetch }:any) {
   const res = await fetch('/api/users');
   const users = await res.json();
   console.log(users)
@@ -20,8 +20,5 @@ export async function load({ fetch }) {
 //         const data = await res1.json();
 //         console.log('Risposta:', data);
 //     }
-  
   return { users };
-
-
 }

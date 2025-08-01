@@ -7,11 +7,11 @@
 
 	let { children } = $props();
 
-	onMount(async()=>{
-		let result = await fetch("/api/lista")
-		let data = await result.json()
-		console.log(data)
-	})
+	// onMount(async()=>{
+	// 	let result = await fetch("/api/lista")
+	// 	let data = await result.json()
+	// 	console.log(data)
+	// })
 	
 </script>
 

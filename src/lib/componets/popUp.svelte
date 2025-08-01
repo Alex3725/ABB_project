@@ -36,7 +36,6 @@ let {tipo = "CREA",placeData = "data", placeTitolo ="titolo", placeContenuto = "
             hiddenPopUp()
             console.log(inpData);
         }
-        
     }
 
     $effect(()=>{
