@@ -10,6 +10,9 @@ export async function loginUtente(email: string, passw: string) {
 
   const data = await res.json();
 
+  console.log(res);
+  
+
   if (!res.ok) {
     throw new Error(data.error || 'Errore durante il login');
   }

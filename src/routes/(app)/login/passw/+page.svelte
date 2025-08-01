@@ -5,19 +5,14 @@
 
 
     let inpPassw = $state("")
-    let emailString = ""
+       
+    let email = $Utente.email
     
-    const email = $derived({
-    stores: Utente,
-    derive: (u: any) => u.email
-  });
-
-
-
-    console.log(emailString);
+    console.log(email);
     
+
     function hendlerLogin() {
-        loginUtente(emailString,inpPassw)
+        loginUtente(email,inpPassw)
         goto("/sito/indice")
     }
 
