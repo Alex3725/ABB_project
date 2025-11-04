@@ -62,13 +62,16 @@ $effect(()=>{
 
 <div class="w-full h-full">
 
-<nav class="w-full h-[10%] bg-red-950 flex justify-center items-center space-x-1">
+<nav class="w-full h-[10%] bg-red-900 flex justify-center items-center gap-4 px-4 shadow-md">
 	
-	<BottoneDeafoultStyle text={"seleziona"} funzione={showCheck}/>
-	<BottoneDeafoultStyle text={""} funzione={listaIdDelet}><XLg/></BottoneDeafoultStyle>
-	<BottoneDeafoultStyle text={"ciao"} funzione={creaButton}/>
+    <BottoneDeafoultStyle text="Seleziona" funzione={showCheck} />
+    <BottoneDeafoultStyle text="" funzione={listaIdDelet}>
+        <XLg class="text-white hover:text-red-300 transition duration-200" />
+    </BottoneDeafoultStyle>
+    <BottoneDeafoultStyle text="Aggiungi" funzione={creaButton} />
+
 	
-	<!-- <BottoneDeafoultStyle text={"elimina"} funzione={}/> -->
+	<!-- <BottoneDeafoultStyle text={"elimina"} funzione={}/>  -->
 </nav>
 
 	<div class=" w-full h-[70%] flex items-center justify-center gap-[5%]    ">
@@ -99,5 +102,6 @@ $effect(()=>{
 }}>
 	caso
 </button> -->
+
 
 
